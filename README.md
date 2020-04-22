@@ -81,19 +81,14 @@ Add AWS Library
 pip3 install AWSIoTPythonSDK
 ```
 
-endpoint = iot.us-west-2.amazonaws.com
-https://iotevents.us-west-2.amazonaws.com/things/RaspberryPiPOC01/shadow
-
-account-specific-prefix-ats.iot.region.amazonaws.com
-https://data.iot.us-west-2.amazonaws.com/things/RaspberryPiPOC01/shadow
-a35bkr5k4djq7a-ats.iot.us-west-2.amazonaws.com
+## Endpoint
 
 Endpoint is here: https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/thing/RaspberryPiPOC01
 
 ```
-python3 moistureSensor.py --endpoint a35bkr5k4djq7a-ats.iot.us-west-2.amazonaws.com --rootCA ~/certs/AmazonRootCA1.pem --cert ~/certs/55328ae906-certificate.pem.crt --key ~/certs/55328ae906-private.pem.key --thingName RaspberryPiPOC01 --clientId RaspberryPiPOC01
+python3 moistureSensor.py --endpoint <custom endpoint> --rootCA ~/certs/AmazonRootCA1.pem --cert ~/certs/55328ae906-certificate.pem.crt --key ~/certs/55328ae906-private.pem.key --thingName RaspberryPiPOC01 --clientId RaspberryPiPOC01
 
-python3 /home/pi/Documents/MostureProbe/moistureSensor.py --endpoint a35bkr5k4djq7a-ats.iot.us-west-2.amazonaws.com --rootCA ~/certs/AmazonRootCA1.pem --cert ~/certs/668db68b92-certificate.pem.crt --key ~/certs/668db68b92-private.pem.key --thingName RaspberryPiPOC01 --clientId RaspberryPiPOC01
+python3 /home/pi/Documents/MostureProbe/moistureSensor.py --endpoint <custom endpoint> --rootCA ~/certs/AmazonRootCA1.pem --cert ~/certs/668db68b92-certificate.pem.crt --key ~/certs/668db68b92-private.pem.key --thingName RaspberryPiPOC01 --clientId RaspberryPiPOC01
 ```
 
 - [ ] Had to create a genaric AWS IOT policy for the keys to work.
