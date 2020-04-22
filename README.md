@@ -72,9 +72,6 @@ https://docs.aws.amazon.com/iot/latest/developerguide/iot-moisture-raspi-setup.h
 - Created AWS_IOT_Policy
 - Created Single Thing: `RaspberryPiPOC01`
 
-```
-openssl base64 -in <in file> -out <out file>
-```
 
 Add AWS Library
 ```
