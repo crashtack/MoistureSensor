@@ -68,7 +68,7 @@ Install seesaw Library
 ## AWS IOT
 https://docs.aws.amazon.com/iot/latest/developerguide/iot-moisture-raspi-setup.html
 
-- logged in with AIM user banksd (754972070574)
+- logged in with AIM user
 - Created AWS_IOT_Policy
 - Created Single Thing: `RaspberryPiPOC01`
 
