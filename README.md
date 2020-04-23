@@ -95,4 +95,4 @@ https://github.com/aws/aws-iot-device-sdk-python/issues/154
 ## WiFi Setup
 https://learn.adafruit.com/raspberry-pi-zero-creation/text-file-editing
 
-- [ ] This one: https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+- [x] This one: https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
