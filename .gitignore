@@ -110,7 +110,7 @@ ENV/
 env.bak/
 venv.bak/
 myenv/
-.swp
+*.swp
 
 # Spyder project settings
 .spyderproject
