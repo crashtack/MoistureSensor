@@ -35,39 +35,51 @@ $ git push
 ## Setup virtualenv
 Install python virtualenv
 https://docs.python-guide.org/dev/virtualenvs/
-
+```
 $ pip3 install --user pipenv
 $ source ~/.profile           # I don't know why i had to run this command to use virtualenvs and pipenv
 $ cd project_folder (~/Projects/DataVis)
 $ pipenv install requests
 $ pip3 install virtualenv
-
+```
 to create a virtualenv
+```
 $ cd to project_folder
 $ virtualenv venv #creates the venv dir in the project dir
 $ source venv/bin/activate    # Activates the virtual environment
+```
 
 to install package in venv
+```
 $ pip install <package>
+```
 
 to deactivate venv
+```
 $ deactivate
+```
 
 to remove a venv
+```
 $ rm -rf venv
+```
 
 ## Create Project folder and initialize git
+```
 $ git clone https://github.com/crashtack/MoistureSensor.git
 $ cd MoistureSensor
 $ virtualenv venv
 $ source venv/bin/activate
+```
 
 ## NGINX
 https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md
+```
 $ sudo apt-get update
 $ sudo apt-get install nginx
 $ sudo /etc/init.d/nginx start
 $ hostname -I     # what's my ip
+```
 
 ## uWSGI
 https://hackersandslackers.com/deploy-flask-uwsgi-nginx/
@@ -110,11 +122,14 @@ $ flask run --host=0.0.0.0    # make flask externally visable ip:5000
 create files
 
 Back to uWSGI instal tutorial
+```
 $ python3.8 -m venv myenv
 $ source myenv/bin/activate
 $ python3 -m pip install -r requirements.txt  # If you have an app already built
-
+```
 
 ## Dash
 Following this: https://dash.plotly.com/layout
+```
 $ pip install dash==1.11.0
+```
