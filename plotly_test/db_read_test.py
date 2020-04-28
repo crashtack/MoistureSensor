@@ -38,7 +38,9 @@ def create_plot_data(rows):
         temp.append(row[1])
         hum.append(row[2])
         print(row)
-        print(typeof(row[0]))
+
+    return timestamp, temp, hum
+
 
 def main():
     table = "moisture_data"
