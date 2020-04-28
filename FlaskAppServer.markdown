@@ -1,4 +1,12 @@
 # Pi Setup continued
+
+## Vim How to get correct indentation when pasting
+Vim Paste mode
+```
+:set paste
+:set nopaste
+```
+
 ## Git Setup
 https://kbroman.org/github_tutorial/pages/first_time.html
 
@@ -20,16 +28,19 @@ cat ~/.ssh/id_rsa.pub
 ```
 
 Git Commands
+```
 $ git status
 $ git remote
 $ git checkout -b new-branch-name
+```
 
 *Git Flow*
 Make a change:
+```
 $ git add <changed file>
 $ git commit
 $ git push
-
+```
 
 # Run Flask App Server on Raspberry Pi
 ## Setup virtualenv
@@ -133,3 +144,27 @@ Following this: https://dash.plotly.com/layout
 ```
 $ pip install dash==1.11.0
 ```
+
+## SQLite install
+Following this for the SQLite usage: https://medium.com/@rovai/from-data-to-graph-a-web-jorney-with-flask-and-sqlite-6c2ec9c0ad0
+
+Install SQLite3 not in the virtualenv
+```
+$ sudo apt-get install sqlite3
+```
+
+From inside project directory
+```
+$ source venv/bin/activate
+$ sqlite3 sensorsData.db
+```
+Create Table
+```
+sqlite> BEGIN;
+sqlite> CREATE TABLE moisture_data (timestamp DATETIME,  temp NUMERIC, hum NUMERIC);
+sqlite> COMMIT;
+```
+
+## Plotly
+```
+$ pip install plotly==4.6.0
