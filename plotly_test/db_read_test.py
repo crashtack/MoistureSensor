@@ -17,28 +17,28 @@ def create_connection(db_file):
     return conn
 
 
-def get_last_num_readings(conn, table, num):
+def get_last_num_rows(conn, table, num):
     """
     Query the last 'num' readings
     """
-    
+
     cur = conn.cursor()
     cur.execute(f"SELECT timestamp, temp, hum FROM {table} ORDER BY timestamp DESC LIMIT {num}")
 
     rows = cur.fetchall()
+    return rows
 
+def create_plot_data(rows):
     timestamp = []
     temp = []
     hum = []
-    
+
     for row in rows:
-        timestamp.insert(-1, row[0])
-        temp.insert(-1, row[1])
-        hum.insert(-1, row[2])
+        timestamp.append(row[0])
+        temp.append(row[1])
+        hum.append(row[2])
         print(row)
-
-    return timestamp, temp, hum
-
+        print(typeof(row[0]))
 
 def main():
     table = "moisture_data"
@@ -46,9 +46,9 @@ def main():
 
     conn = create_connection(db)
     with conn:
-        timestamp, temp, hum = get_last_num_readings(conn, table, 10)
+        rows = get_last_num_rows(conn, table, 10)
 
-    print(f'hums: {hum}')
+    create_plot_data(rows)
 
 
 if __name__ == '__main__':
