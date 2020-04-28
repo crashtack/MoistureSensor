@@ -15,15 +15,10 @@ def get_data():
 
     return create_plot_data(rows)
 
-def create_fig(time, hum):
-    timestamp, temp, hum = get_data()
-
+def create_fig(time, data):
     # Create traces
-
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=time, y=hum,
-                        mode='lines',
-                        name='lines'))
+    fig.add_trace(go.Scatter(x=time, y=data, mode='lines', name='lines'))
 
     return fig
 
@@ -59,7 +54,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         }
     ),
 
-    dcc.Graph(figure=fig1)
+    dcc.Graph(figure=fig1),
     dcc.Graph(figure=fig2)
 
 ])

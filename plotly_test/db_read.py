@@ -37,7 +37,7 @@ def create_plot_data(rows):
         timestamp.append(row[0])
         temp.append(row[1])
         hum.append(row[2])
-        print(row)
+        # print(row)
 
     return timestamp, temp, hum
 
