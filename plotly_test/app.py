@@ -22,7 +22,7 @@ fig.add_trace(go.Scatter(x=random_x, y=random_y1,
                     mode='lines+markers',
                     name='lines+markers'))
 fig.add_trace(go.Scatter(x=random_x, y=random_y2,
-                    mode='markers', name='markers')))
+                    mode='markers', name='markers'))
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']

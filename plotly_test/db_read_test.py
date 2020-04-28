@@ -23,7 +23,7 @@ def get_last_num_readings(conn, table, num):
     """
 
     cur = conn.cursor()
-    cur.execute(f"SELECT temp hum FROM {table} LIMIT {num}")
+    cur.execute(f"SELECT timestamp, temp, hum FROM {table} ORDER BY timestamp ASC LIMIT {num}")
 
     rows = cur.fetchall()
 
@@ -37,7 +37,7 @@ def main():
 
     conn = create_connection(db)
     with conn:
-        get_last_num_readings(conn, table, 100)
+        get_last_num_readings(conn, table, 10)
 
 if __name__ == '__main__':
     main()
