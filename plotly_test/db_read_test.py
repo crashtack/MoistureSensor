@@ -38,3 +38,6 @@ def main():
     conn = create_connection(db)
     with conn:
         get_last_num_readings(conn, table, 100)
+
+if __name__ == '__main__':
+    main()
