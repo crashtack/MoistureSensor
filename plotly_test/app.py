@@ -11,7 +11,7 @@ def get_data():
 
     conn = create_connection(db)
     with conn:
-        rows = get_last_num_rows(conn, table, 10)
+        rows = get_last_num_rows(conn, table, 1500)
 
     return create_plot_data(rows)
 
@@ -29,7 +29,8 @@ def create_fig(time, hum):
 
 
 timestamp, temp, hum = get_data()
-fig = create_fig(timestamp, hum)
+fig1 = create_fig(timestamp, hum)
+fig2 = create_fig(timestamp, temp)
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -58,7 +59,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         }
     ),
 
-    dcc.Graph(figure=fig)
+    dcc.Graph(figure=fig1)
+    dcc.Graph(figure=fig2)
 
 ])
 
