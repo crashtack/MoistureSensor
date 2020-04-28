@@ -41,6 +41,9 @@ def create_plot_data(rows):
 
     return timestamp, temp, hum
 
+def test():
+    print("test")
+
 
 def main():
     table = "moisture_data"

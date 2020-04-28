@@ -3,26 +3,33 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 
-# Create random data with numpy
-import numpy as np
-np.random.seed(1)
+from db_read_test import create_connection, get_last_num_rows, create_plot_data
 
-N = 100
-random_x = np.linspace(0, 1, N)
-random_y0 = np.random.randn(N) + 5
-random_y1 = np.random.randn(N)
-random_y2 = np.random.randn(N) - 5
+def get_data():
+    table = "moisture_data"
+    db = "/home/pi/Projects/MoistureSensor/sensorsData.db"
 
-# Create traces
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=random_x, y=random_y0,
-                    mode='lines',
-                    name='lines'))
-fig.add_trace(go.Scatter(x=random_x, y=random_y1,
-                    mode='lines+markers',
-                    name='lines+markers'))
-fig.add_trace(go.Scatter(x=random_x, y=random_y2,
-                    mode='markers', name='markers'))
+    conn = create_connection(db)
+    with conn:
+        rows = get_last_num_rows(conn, table, 10)
+
+    return create_plot_data(rows)
+
+def create_fig(time, hum):
+    timestamp, temp, hum = get_data()
+
+    # Create traces
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=time, y=hum,
+                        mode='lines',
+                        name='lines'))
+
+    return fig
+
+
+timestamp, temp, hum = get_data()
+fig = create_fig(timestamp, hum)
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
