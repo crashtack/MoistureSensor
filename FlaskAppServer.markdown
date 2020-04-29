@@ -168,3 +168,7 @@ sqlite> COMMIT;
 ## Plotly
 ```
 $ pip install plotly==4.6.0
+
+for numpy
+$ sudo apt install libatlas3-base
+$ sudo pip3 install numpy
