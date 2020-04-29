@@ -2,6 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
+from dash.dependencies import Input, Output
 
 from db_read import create_connection, get_last_num_rows, create_plot_data
 
