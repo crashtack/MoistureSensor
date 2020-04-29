@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
 
-from db_read_test import create_connection, get_last_num_rows, create_plot_data
+from db_read import create_connection, get_last_num_rows, create_plot_data
 
 def get_data():
     table = "moisture_data"
@@ -11,7 +11,7 @@ def get_data():
 
     conn = create_connection(db)
     with conn:
-        rows = get_last_num_rows(conn, table, 1500)
+        rows = get_last_num_rows(conn, table, 5000)
 
     return create_plot_data(rows)
 
